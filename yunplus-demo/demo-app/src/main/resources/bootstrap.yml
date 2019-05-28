@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: demo-app
+  profiles:
+    active: dev
+
+#apollo配置
+app:
+  id: ${spring.application.name}
+
+# apollo config
+apollo:
+  meta: ${apollo.meta}
+  cacheDir: /data/app_data/apollo_cache/${spring.application.name}
+  bootstrap:
+    enabled: true
+    namespaces: application, application.yml, XDPT.public
+    eagerLoad:
+      enabled: true
